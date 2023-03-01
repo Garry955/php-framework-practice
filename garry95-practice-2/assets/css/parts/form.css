@@ -1,0 +1,227 @@
+form .form-field.input input,
+form .form-field.input textarea {
+    width: 100%;
+    padding: 0 10px;
+    border: none;
+    color: #000;
+    height: 30px;
+    line-height: 26px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border-top-left-radius: 6px;
+    outline: none;
+    border: 3px solid transparent;
+    font-size: 14px;
+}
+
+form .form-field.input textarea {
+    line-height: 1;
+    padding: 7px 10px;
+    overflow: auto;
+    resize: none;
+    height: 33px;
+}
+
+form .form-field.input textarea:focus {
+    height: 150px;
+}
+
+form .form-field input {
+    font-size: 14px;
+}
+
+form .text {
+    height: 20px;
+    line-height: 20px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+form .text.pw a {
+    color: #255481;
+    font-weight: 700;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+form .text.pw a:hover {
+    color: #000;
+}
+
+form .form-group {
+    font-size: 0;    
+}
+
+form .form-group + .form-group {
+    margin-top: 15px;
+}
+
+form .submit {
+    font-size: 1rem;
+    margin-top: 30px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    line-height: 32px;
+    width: 100%;
+    padding: 0 10px;
+    float: right;
+    background-color: #3c3c3c;
+    color: #f1f1f1;
+    -webkit-box-shadow: inset 0px 0px 20px 0px rgba(255, 255, 255, 0.5);
+    -moz-box-shadow: inset 0px 0px 20px 0px rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0px 0px 20px 0px rgba(255, 255, 255, 0.5);
+    text-align: center;
+}
+
+form .submit:hover {
+    background-color: #255481;
+    background-color: #000;
+}
+
+form .form-field {
+    position: relative;
+}
+
+form .form-field.input:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    display: inline-block;
+    width: 3px;
+    height: 20px;
+    background-color: #255481;
+    background-color: #000;
+}
+
+form .form-field input[type="radio"] + label {
+    position: relative;
+    padding-left: 0;
+    display: inline-block;
+    min-height: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    width: 25%;
+}
+
+form .form-field input[type="radio"] + label:before {
+    content: '';
+    background-color: #fff;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-right: 10px;
+    vertical-align: bottom;
+}
+
+form .form-field input[type="radio"] + label:after {
+    opacity: 0;
+    font-family: FontAwesome;
+    font-weight: 900;
+    content: '\f55f';
+    color: #000;
+    font-size: 14px;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    z-index: 2;
+    position: absolute;
+    line-height: 20px;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+form .form-field input[type="radio"]:checked + label:after {
+    opacity: 1;
+}
+
+form .form-field.r-selection  {
+    font-weight: 700;
+    min-height: 30px;
+}
+
+form .form-field.r-selection  span {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+form .form-field.input input:focus,
+form .form-field.input textarea:focus {
+    border-color: #255481;
+    border-color: #000;
+}
+
+form .form-group .r-select {
+    font-size: 14px;
+    position: relative;
+    height: 30px;
+}
+
+form .form-group .r-select select { 
+    margin-left: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    padding: 0 10px;
+    width: 64.5%;
+    cursor: pointer;
+    height: 30px;
+    line-height: 30px;
+}
+
+form .form-group.parent,
+form .form-group.level {
+    max-height: 0;
+    visibility: hidden;
+    margin-top: 0;
+    opacity: 0;
+}
+
+form #sec:checked ~ .form-group.parent,
+form #header:checked ~ .form-group.level {
+    max-height: 1000px;
+    visibility: visible;
+    margin-top: 15px;
+    opacity: 1;
+}
+
+/**
+ * Query
+ */
+@media (min-width: 800px) {
+    form .text.pw a,
+    form .text,
+    form .form-field.r-selection span {
+        color: #fff;
+    }
+    form .text:not(.pw) {
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+        width: 35%;
+    }
+    form .text + .form-field {
+        display: inline-block;
+        width: 65%;
+    }
+    form .form-field .submit {
+        margin-top: 10px;
+        width: 200px;
+    }
+    form .form-field.r-selection span {
+        width: 33%;
+        display: inline-block;
+}

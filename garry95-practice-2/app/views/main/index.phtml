@@ -1,0 +1,47 @@
+<section class="login">
+    <div class="wrapper box">
+        <div class="form-outer">
+            <div class="form-head">
+                <h2>Bejelentkezés</h2>
+            </div>
+            <div class="clearfix"></div>
+            <form id="login-f" action="/login" method="post">
+                <input type="hidden" name="sent" value="1" id="issent">
+                <div class="form-group">
+                    <div class="text">
+                        <span>E-mail cím:</span>
+                    </div>
+                    <div class="form-field input">
+                        <input type="text" name="email" placeholder="E-mail cím">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="text">
+                        <span>Jelszó:</span>
+                    </div>
+                    <div class="form-field input">
+                        <input type="password" name="password" placeholder="Jelszó">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="text pw">
+                        <span>
+                            <a href="/repassword">Elfelejtettem a jelszavam!</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="text pw">
+                        <span>
+                            <a href="/repassword/reactivate">Fiók beaktiválása.</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <button type="submit" class="submit upper">Bejelentkezés</button>
+                </div>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+    </div>
+</section>

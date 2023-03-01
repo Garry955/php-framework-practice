@@ -1,0 +1,76 @@
+<section class="add-user">
+    <div class="wrapper box">
+        <h2>Menü adatok módosítása</h2>
+        <div class="form-outer">
+            <div class="form-head">
+                <h3>(<?php echo $datas->id?>) - Adatok szerkesztése</h3>
+            </div>
+            <div class="clearfix"></div>
+            <form id="edit-f" action="<?php echo $_SERVER["REQUEST_URI"]?>" method="post">
+                <input type="hidden" name="sent" value="1">
+                <div class="form-group">
+                    <div class="text">
+                        <span>Név:</span>
+                    </div>
+                    <div class="form-field input">
+                        <input type="text" name="name" value="<?php echo $datas->name?>" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="text">
+                        <span>Url:</span>
+                    </div>
+                    <div class="form-field input">
+                        <input type="text" name="src" value="<?php echo $datas->src?>" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-field r-selection">
+                        <span>Pozició:</span>
+                        <input type="radio" name="position" value="header" id="header" <?php echo $datas->position == "header" ? "checked" : "" ?>>
+                        <label for="header">Fejléc</label>
+                        <input type="radio" name="position" value="footer" id="footer" <?php echo $datas->position == "footer" ? "checked" : "" ?>>
+                        <label for="footer">Lábléc</label>
+                        <div class="form-group level animate">
+                            <div class="form-field r-selection">
+                                <span>Szint:</span>
+                                <input type="radio" name="level" value="0" id="first" <?php echo !$datas->level ? "checked" : "" ?>>
+                                <label for="first">Első</label>
+                                <input type="radio" name="level" value="1" id="sec" <?php echo $datas->level ? "checked" : "" ?>>
+                                <label for="sec">Második</label>
+                                <div class="form-group parent animate">
+                                    <div class="form-field r-selection r-select">
+                                        <span>Szülő:</span>
+                                        <select name="parent">
+                                            <optgroup label="Header">
+                                            <option value="">--Válasszon szülőt--</option>
+<?php foreach ($menus as $parent):
+        if (!$parent->level): ?>
+                                          <option value="<?php echo $parent->id?>"><?php echo $parent->name?></option>
+<?php   endif;
+      endforeach; ?>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-field r-selection">
+                        <span>Munkamenet:</span>
+                        <input type="radio" name="need_session" value="1" id="session" <?php echo $datas->need_session ? "checked" : "" ?>>
+                        <label for="session">Igen</label>
+                        <input type="radio" name="need_session" value="0" id="nosession" <?php echo !$datas->need_session ? "checked" : "" ?>>
+                        <label for="nosession">Nem</label>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <button type="submit" class="submit upper">Módosít</button>
+                </div>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,76 @@
+<section class="edit">
+    <div class="wrapper box">
+        <h2>Felhasználói adatok módosítása</h2>
+        <div class="form-outer">
+            <div class="form-head">
+                <h3><?php echo '('. $user->id . ') ' . $user->name?> - Adatok szerkesztése</h3>
+            </div>
+            <div class="clearfix"></div>
+            <form id="edit-f" action="<?php echo $_SERVER["REQUEST_URI"] ?>" method="post">
+                <input type="hidden" name="sent" value="1">
+                <div class="form-group">
+                    <div class="text">
+                        <span>Név:</span>
+                    </div>
+                    <div class="form-field input">
+                        <input type="text" name="name" value="<?php echo $user->name?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="text">
+                        <span>E-mail cím:</span>
+                    </div>
+                    <div class="form-field input">
+                        <input type="text" name="email" value="<?php echo $user->email?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-field r-selection">
+                        <span>Nem:</span>
+                        <input type="radio" name="gender" value="0"id="gender-1" <?php echo $user->sex ? '' : 'checked' ?>>
+                        <label for="gender-1">Férfi</label>
+                        <input type="radio" name="gender" value="1" id="gender-2" <?php echo $user->sex ? 'checked' : '' ?>>
+                        <label for="gender-2">Nő</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="text">
+                        <span>Jelszó:</span>
+                    </div>
+                    <div class="form-field input">
+                        <input type="password" name="password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="text">
+                        <span>Jelszó mégegyszer:</span>
+                    </div>
+                    <div class="form-field input">
+                        <input type="password" name="password2">
+                    </div>
+                </div>
+                <div class="form-group outer">
+                    <div class="text">
+                        <span>Aktív:</span>
+                    </div>
+                    <div class="form-field text">
+                        <span class="in-b <?php echo $user->active ? 'ac' : 'da'?>"><?php echo $user->active ? 'Igen' : 'Nem' ?></span>
+                        <a href="/admin/togglePanel/<?php echo $user->id?>" class="submit"><?php echo $user->active ? 'Deaktiválás' : 'Aktiválás' ?></a>
+                    </div>
+                </div>
+                <div class="form-group outer remove">
+                    <div class="text">
+                        <span>Törlés:</span>
+                    </div>
+                    <div class="form-field text">
+                        <a href="/admin/delete/<?php echo $user->id?>" class="submit">Törlés</a>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <button type="submit" class="submit upper">Módosít</button>
+                </div>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+    </div>
+</section>

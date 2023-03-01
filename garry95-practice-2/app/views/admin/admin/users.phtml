@@ -1,0 +1,72 @@
+<section class="a-users">
+    <div class="wrapper box">
+        <h2>Felhasználók</h2>
+        <div class="datas">
+            <div class="data-head">
+                <div class="id block">
+                    <span>ID</span>
+                </div>
+                <div class="name block">
+                    <span>Név</span>
+                </div>
+                <div class="email block">
+                    <span>E-mail cím</span>
+                </div>
+                <div class="gender block">
+                    <span>Nem</span>
+                </div>
+                <div class="active block">
+                    <span>Aktív</span>
+                </div>
+                <div class="controls block">
+                    <span>Műveletek</span>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="data-content">
+<?php foreach ($users as $key => $user):?>
+                <div class="data-row">
+                    <a class="cover-link" href="editUser/<?php echo $user->id ?>"></a>
+                    <div class="id block">
+                        <span><?php echo $user->id?></span>
+                    </div>
+                    <div class="name block">
+                        <span><?php echo $user->name?></span>
+                    </div>
+                    <div class="email block">
+                        <span><?php echo $user->email?></span>
+                    </div>
+                    <div class="gender block">
+                        <span><?php echo $user->sex ? 'Nő' : 'Férfi'?></span>
+                    </div>
+                    <div class="active block">
+                        <span><?php echo $user->active ? 'Aktív' : 'Inaktív' ?></span>
+                    </div>
+                    <div class="controls block">
+                        <div class="edit-btn">
+                            <a class="edit" href="editUser/<?php echo $user->id ?>">
+                                <i class="fas fa-user-edit"></i>
+                            </a>
+                        </div>
+                        <div class="activate-btn">
+                            <a class="edit" href="toggle/<?php echo $user->id ?>">
+                                <i class="fas fa-user-lock"></i>
+                            </a>
+                        </div>
+                        <div class="delete-btn">
+                            <a class="edit" href="deleteUser/<?php echo $user->id?>">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+<?php endforeach;?>
+            </div>
+            <div class="add-panel right">
+                <a href="/admin/addUser" class="white">+ Új felhasználó hozzáadása</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</section>

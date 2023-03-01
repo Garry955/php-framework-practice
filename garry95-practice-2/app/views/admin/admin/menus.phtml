@@ -1,0 +1,55 @@
+<section class="a-users">
+    <div class="wrapper box">
+        <h2>Admin felhasználók</h2>
+        <div class="menus datas">
+            <div class="data-head">
+                <div class="id block">
+                    <span>ID</span>
+                </div>
+                <div class="name block">
+                    <span>Név</span>
+                </div>
+                <div class="email block">
+                    <span>Pozició</span>
+                </div>
+                <div class="controls block">
+                    <span>Műveletek</span>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="data-content">
+<?php foreach ($menus as $key => $menu):?>
+                <div class="data-row">
+                    <a class="cover-link" href="editMenu/<?php echo $menu->id ?>"></a>
+                    <div class="id block">
+                        <span><?php echo $menu->id?></span>
+                    </div>
+                    <div class="name block">
+                        <span><?php echo $menu->name?></span>
+                    </div>
+                    <div class="email block">
+                        <span><?php echo $menu->position?></span>
+                    </div>
+                    <div class="controls block">
+                        <div class="edit-btn">
+                            <a class="edit" href="editMenu/<?php echo $menu->id ?>">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                        </div>
+                        <div class="edit-btn">
+                            <a class="edit" href="deleteMenu/<?php echo $menu->id ?>">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+<?php endforeach;?>
+            </div>
+            <div class="add-panel right">
+                <a href="/admin/addMenu" class="white">+ Új menü hozzáadása</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,94 @@
+<?php use core\classes\session;
+$message = \core\classes\session::get('message', true)?: [];?>
+
+<section class="profile wrapper box">
+    <h2>Bejelentkezve mint: <?php echo $user->name?></h2>
+    <div class="form-outer left">
+        <div class="form-head">
+            <h3>Profil adatok</h3>
+        </div>
+        <div class="labels left">
+            <div class="form-field">
+                <span>Név:</span>
+            </div>
+            <div class="form-field">
+                <span>Email:</span>
+            </div>
+            <div class="form-field">
+                <span>Nem:</span>
+            </div>
+            <div class="form-field">
+                <span>Jelszó:</span>
+            </div>
+            <div class="form-field">
+                <span>Jelszó ismét:</span>
+            </div>
+        </div>
+        <div class="inputs left">
+            <form action="/profile/update" method="post">
+                <div class="form-field input">
+                    <input type="text" name="name" value="<?php echo $user->name?>">
+                </div>
+                <div class="form-field input">
+                    <input type="text" name="email" value="<?php echo $user->email?>">
+                </div>
+                <div class="form-field r-selection">
+                    <span>Nem:</span>
+                        <input type="radio" name="gender" id="gender-1" value="0" <?php echo !$user->sex ? "checked" : ''  ?>>
+                        <label for="gender-1">Férfi</label>
+
+                        <input type="radio" name="gender" id="gender-2" value="1" <?php echo $user->sex ? "checked" : ''  ?>>
+                        <label for="gender-2">Nő</label>
+                </div>
+                <div class="form-field input">
+                    <input type="password" name="password">
+                </div>
+                <div class="form-field input">
+                    <input type="password" name="password2">
+                </div>
+                <div class="form-field">
+                    <button type="submit" class="submit upper">Módosítás</button>
+                </div>
+            </form>
+        </div>
+        <div class="clearfix"></div>
+        <div class="left">
+        <?php if ($message)
+                foreach ($message as $msg){
+                    echo '<span class="error-msg">'.$msg . '</span>';
+        }
+            ?>
+        </div>
+    </div>
+    <div class="form-outer right">
+        <div class="form-head">
+            <h3>Fiók felfüggesztése / Végleges törlés</h3>
+        </div>
+            <div class="form-field white">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Donec at efficitur libero, et rutrum mauris. Donec euismod,
+                 libero at euismod maximus, lorem metus molestie velit, vel malesuada massa
+                  ligula eget odio. Quisque lorem neque, efficitur quis nibh id, placerat
+                   scelerisque nunc. Aliquam non efficitur mi. Maecenas vel libero egestas,
+                    ornare augue sed, mollis libero. Aenean consequat eu nisi quis laoreet.
+                    <br><br>
+                     Vestibulum sagittis venenatis rutrum. Vivamus ut dapibus orci,
+                      vel pulvinar metus. Proin finibus dignissim convallis.
+                       Quisque vehicula nisl at faucibus convallis. Etiam tempus pharetra
+                        vestibulum. Nulla vel venenatis mauris.
+                 </p>
+            </div>
+            <form action="/profile/deactivate" method="post" id="f-deactivate">
+                <div class="form-field">
+                    <input type="hidden" name="deac" value="1">
+                    <button type="submit" class="submit">Fiók felfüggesztése</button>
+                </div>
+            </form>
+            <form action="/profile/remove" method="post" id="f-deactivate">
+                <div class="form-field">
+                    <input type="hidden" name="remove" value="1">
+                    <button type="submit" class="submit">Fiók végleges törlése</button>
+                </div>
+            </form>
+    </div>
+</section>

@@ -1,0 +1,70 @@
+/**
+ * Common@Admin
+ */
+.edit h2 {
+    font-size: 20px;
+}
+
+.edit .form-head {
+    background-color: #3c3c3c;
+}
+
+.edit .form-group.outer {
+    height: 40px;
+    line-height: 40px;
+}
+
+.edit .form-group.outer .form-field span {
+    padding-left: 25px;
+}
+
+.edit .form-group.outer .form-field span:after {
+    font-size: 20px;
+    display: inline-block;
+    font-weight: 900;
+    font-family: "FontAwesome";
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 30px;
+    height: 30px;
+    position: absolute;
+    top: -3px;
+    left: 0;
+    color: #fff;
+}
+
+.edit .form-group.outer .form-field span.da:after {
+    content: '\f023';
+}
+
+.edit .form-group.outer .form-field span.ac:after {
+    content: '\f3c1';
+}
+
+.edit .form-group.outer .submit {
+    margin-top: 0;
+}
+
+.edit .form-group.outer.remove .text,
+.edit .form-group.outer.remove .text span {
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+/**
+ * Gallery@Admin
+ */
+.edit .form-outer,
+.upload .form-outer {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.upload .form-group.area .text {
+    vertical-align: top;
+}

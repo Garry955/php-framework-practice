@@ -1,0 +1,44 @@
+<section class="upload padt-20 padb-20">
+    <div class="wrapper box pad-20">
+        <h1>Képfeltöltés</h1>
+        <div class="margt-20 bracket in-b width-45 br-all drop-sh-35 bg-white pad-20">
+            <form id="upload-f" action="/upload/upload" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="sent" value="1">
+                <div id="upload" class="form-field margt-10">
+                    <input type="file" name="picture[]" id="pic-in" multiple>
+                </div>
+                <div id="tags" class="form-field margt-10">
+                    <b class="in-b margr-20">Tagek:</b>
+                    <input type="text" name="tags" maxlength="419">
+                </div>
+                <input type="submit" value="submit" name="submit" class="bg-white drop-sh-35 margt-20">
+                <br>
+            </form>
+            <div class="info margt-30">
+                <div class="in-b tooltip" data-title="Válaszd ki a feltölteni kívánt képet, vagy képeket.">
+                    <i class="fas fa-exclamation-circle"></i>
+                    Képfeltöltés
+                </div>
+                <br>
+                <div class="margt-10 in-b tooltip" data-title="Adj meg tetszőleges tageket a képhez.">
+                    <i class="fas fa-exclamation-circle"></i>
+                    Tagek
+                </div>
+            </div>
+        </div>
+        <div class="margt-20 bracket in-b width-45 br-all drop-sh-35 bg-white right pad-20">
+            <form action="/upload/video" method="post" enctype="application/x-www-form-urlencoded">
+                <input type="hidden" name="sent" value="1">
+                <div class="form-field">
+                      <b class="in-b margr-20">Név:</b>
+                      <input type="text" name="name" required>
+                </div>
+                <div class="form-field margt-10">
+                      <b class="in-b margr-20">Youtube link:</b>
+                      <input type="text" name="source" required>
+                </div>
+                <input type="submit" value="submit" name="submit" class="bg-white drop-sh-35 margt-20">
+            </form>
+        </div>
+    </div>
+</section>

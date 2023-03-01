@@ -1,0 +1,53 @@
+<section class="edit-admin">
+    <div class="wrapper box">
+        <h2>Alapadatok módosítása</h2>
+        <div class="form-outer">
+            <div class="form-head">
+                <h3>(<?php echo $datas->id?>) - Adatok szerkesztése</h3>
+            </div>
+            <div class="clearfix"></div>
+            <form id="edit-f" action="<?php echo $_SERVER["REQUEST_URI"] ?>" method="post">
+                <input type="hidden" name="sent" value="1">
+                <div class="form-group">
+                    <div class="text">
+                        <span>Név:</span>
+                    </div>
+                    <div class="form-field input">
+                        <input type="text" name="name" value="<?php echo $datas->name?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="text">
+                        <span>Érték:</span>
+                    </div>
+                    <div class="form-field input">
+                        <input type="text" name="value" value="<?php echo $datas->value?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-field r-selection">
+                        <span>Szükséges:</span>
+                        <input type="radio" name="required" value="1" id="req" <?php echo $datas->required ? "checked" : "" ?>>
+                        <label for="req">igen</label>
+                        <input type="radio" name="required" value="0" id="noreq" <?php echo !$datas->required ? "checked" : "" ?>>
+                        <label for="noreq">Nem</label>
+                    </div>
+                </div>
+<?php if (!$datas->required) :?>
+                <div class="form-group outer remove">
+                    <div class="text">
+                        <span>Törlés:</span>
+                    </div>
+                    <div class="form-field text">
+                        <a href="/admin/deleteData/<?php echo $datas->id?>" class="submit">Törlés</a>
+                    </div>
+                </div>
+<?php endif;?>
+                <div class="form-field">
+                    <button type="submit" class="submit upper">Módosít</button>
+                </div>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+    </div>
+</section>

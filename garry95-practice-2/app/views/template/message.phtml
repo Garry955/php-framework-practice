@@ -1,0 +1,21 @@
+<?php if ($message) {
+        $color = "red";
+        foreach ($message as $key => $msg) {
+            if (preg_match("/success/", strtolower($key))) {
+                $color = "green";
+            }
+        }?>
+    <input type="checkbox" id="close-message">
+    <div class="error-msg" style="background-color: <?php echo $color?>">
+<?php
+        foreach ($message as $msg) {
+            echo '<span>' . $msg . '</span>';
+}?>
+        <div class="msg-close-btn">
+            <label for="close-message">
+                <i class="fas fa-times"></i>
+            </label>
+        </div>
+    <div class="clearfix"></div>
+    </div>
+<?php }?>

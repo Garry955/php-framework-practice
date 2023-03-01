@@ -1,0 +1,57 @@
+<section class="a-users">
+    <div class="wrapper box">
+        <h2>Admin felhasználók</h2>
+        <div class="admins datas">
+            <div class="data-head">
+                <div class="id block">
+                    <span>ID</span>
+                </div>
+                <div class="name block">
+                    <span>Név</span>
+                </div>
+                <div class="email block">
+                    <span>E-mail cím</span>
+                </div>
+                <div class="controls block">
+                    <span>Műveletek</span>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="data-content">
+<?php foreach ($users as $key => $user):?>
+                <div class="data-row">
+                    <a class="cover-link" href="editAdmin/<?php echo $user->id ?>"></a>
+                    <div class="id block">
+                        <span><?php echo $user->id?></span>
+                    </div>
+                    <div class="name block">
+                        <span><?php echo $user->name?></span>
+                    </div>
+                    <div class="email block">
+                        <span><?php echo $user->email?></span>
+                    </div>
+                    <div class="controls block">
+                        <div class="edit-btn">
+                            <a class="edit" href="editAdmin/<?php echo $user->id ?>">
+                                <i class="fas fa-user-edit"></i>
+                            </a>
+                        </div>
+<?php if (!$user->sys_admin || $user->id != $admin->id) :?>
+                        <div class="delete-btn">
+                            <a class="edit" href="deleteAdmin/<?php echo $user->id?>">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </div>
+<?php endif;?>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+<?php endforeach;?>
+            </div>
+            <div class="add-panel right">
+                <a href="/admin/addAdmin" class="white">+ Új adminfelhasználó hozzáadása</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</section>

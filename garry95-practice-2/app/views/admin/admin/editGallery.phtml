@@ -1,0 +1,112 @@
+<section class="edit">
+    <div class="wrapper box">
+        <h2>Galéria módosítása</h2>
+        <div class="form-outer">
+            <div class="form-head">
+                <h3>(<?php echo $datas->id?>) - Adatok szerkesztése</h3>
+            </div>
+            <div class="clearfix"></div>
+            <form id="edit-f" action="<?php echo $_SERVER["REQUEST_URI"] ?>" method="post">
+                <input type="hidden" name="sent" value="1">
+                <div class="form-group">
+                    <div class="text">
+                        <span>Név:</span>
+                    </div>
+                    <div class="form-field input">
+                        <input type="text" name="name" value="<?php echo $datas->name?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="text">
+                        <span>Uri:</span>
+                    </div>
+                    <div class="form-field input">
+                        <input type="text" name="uri" value="<?php echo $datas->uri?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="text">
+                        <span>Borítókép:</span>
+                    </div>
+                    <div class="form-field input">
+                        <input type="text" name="cover" value="<?php echo $datas->cover?>">
+                    </div>
+                </div>
+                <div class="form-group outer remove">
+                    <div class="text">
+                        <span>Törlés:</span>
+                    </div>
+                    <div class="form-field text">
+                        <a href="/admin/deleteGallery/<?php echo $datas->id?>" class="submit">Törlés</a>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <button type="submit" class="submit upper">Módosít</button>
+                </div>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+        <div class="form-outer right upload">
+            <div class="form-head">
+                <h3>Képfeltöltés</h3>
+            </div>
+            <div class="clearfix"></div>
+            <form id="upload-f" action="<?php echo $_SERVER["REQUEST_URI"]?>" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="upSent" value="1">
+                <div class="form-group">
+                    <div class="text">
+                        <span>File:</span>
+                    </div>
+                    <div class="form-field">
+                        <input type="file" name="picture[]" id="pic-in" multiple>
+                    </div>
+                </div>
+                <div class="form-group uploader animate">
+                                    <div class="form-field r-selection r-select">
+                                        <span>Feltöltő:</span>
+                                        <select name="uploader">
+                                            <optgroup label="Header">
+                                            <option value="">--Válasszon felhasználót--</option>
+<?php foreach ($uploaders as $uploader):?>
+                                          <option value="<?php echo $uploader->id?>"><?php echo $uploader->name?></option>
+<?php endforeach; ?>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                </div>
+                <div class="form-field">
+                    <button type="submit" class="submit upper">Feltöltés</button>
+                </div>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</section>
+<section class="pictures-admin">
+    <div class="wrapper box">
+        <div class="form-outer pictures">
+                <div class="form-head">
+                    <h3>Galéria képei</h3>
+                    <label for="toggle-imgs" class="right">
+                        <i class="fas fa-chevron-down"></i>
+                    </label>
+                </div>
+                <div class="clearfix"></div>
+                <input type="checkbox" id="toggle-imgs">
+                <div class="images">
+<?php foreach ($pictures as $img):?>
+                    <div class="img-wrapper in-b">
+                        <div class="img">
+                            <img src="/<?php echo $img->path.$img->name?>" alt="<?php echo $img->name?>">
+                        </div>
+                        <div class="desc">
+                            <p><?php echo $img->description?></p>
+                        </div>
+                    </div>
+<?php endforeach;?>
+                </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</section>

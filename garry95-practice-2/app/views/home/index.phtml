@@ -1,0 +1,68 @@
+<section class="slider">
+    <div class="wrapper box">
+        <h2>#SLIDER#</h2>
+    </div>
+</section>
+<section class="galleries">
+    <div class="wrapper box">
+        <h2>Galériák</h2>
+        <div class="types">
+            <div class="bracket pictures">
+                <div class="pikto">
+                    <i class="fas fa-images"></i>
+                </div>
+                <div class="panel">
+                    <div class="panel-text">
+                        <span>ASD</span>
+                    </div>
+                    <a href="#">
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="bracket videos">
+                <div class="pikto">
+                    <i class="fab fa-youtube"></i>
+                </div>
+                <div class="panel">
+                    <div class="panel-text">
+                        <span>ASD</span>
+                    </div>
+                    <a href="#">
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="bracket musics">
+                <div class="pikto">
+                    <i class="fas fa-music"></i>
+                </div>
+                <div class="panel">
+                    <div class="panel-text">
+                        <span>ASD</span>
+                    </div>
+                    <a href="#">
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="leds">
+    <h1>LEDEK</h1>
+    <div class="object">
+<?php
+
+for ($i = 0; $i <= 7;$i++) {
+    echo '<div class="col row-'.$i.'">';
+        for($j = 0; $j <= 7;$j++) {
+            echo '<div class="pin animate pin-'.$i.'-'.$j.'"></div>';
+        }
+    echo '</div>';
+}
+?>
+    </div>
+</section>

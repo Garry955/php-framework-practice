@@ -1,0 +1,59 @@
+main section {
+    padding: 50px 0;
+}
+
+.slider {
+    display: none;
+}
+
+.galleries {
+    background-color: #3c3c3c;
+    display: none;
+}
+
+.galleries h2 {
+    margin-bottom: 20px;
+    color: #fff;
+    display: block;
+    font-size: 20px;
+}
+
+
+.leds {
+    background-color: #fff;
+    padding: 150px;
+    margin-top: 50px;
+}
+
+.leds .object {
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.leds .col {
+    height: 40px;
+    background-color: #e3e3e3;
+    border: 1px solid #000;
+    display: block;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 1px;
+}
+
+.leds .pin {
+    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(255, 255, 255, 0.6);
+    -moz-box-shadow:    inset 0px 0px 10px 0px rgba(255, 255, 255, 0.6);
+    box-shadow:         inset 0px 0px 10px 0px rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    height: 37.25px;
+    width: 12.5%;
+    background-color: #3c3c3c;
+    border: 1px solid #000;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.leds .col:hover .pin {
+    background-color: #00f;
+}

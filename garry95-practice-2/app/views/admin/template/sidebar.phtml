@@ -1,0 +1,57 @@
+<input type="checkbox" id="toggle-sb">
+<aside class="sidebar">
+<?php /*?>
+    <div class="sb-top">
+        <a href="admin/profile" class="cover-link" title="Profil szerkesztése"></a>
+        <div class="sb-img">
+            <img src="/assets/img/logo-b-full-leaf.png" alt="kép">
+        </div>
+        <div class="sb-info">
+            <span><?php echo $admin->name?></span>
+            <span>Admin felhasználó</span>
+        </div>
+    </div>
+*/?>
+    <div class="clearfix"></div>
+    <div class="sb-contents">
+        <nav>
+            <ul>
+                <label class="basicdata" data-alt="A" for="toggle-drop-bdata" title="Adatok kezelése"><span>Adatok</span></label>
+                <input type="checkbox" id="toggle-drop-bdata">
+                <ul class="drop">
+                    <li class="basics-list" title="Alapadatok"><a href="/admin/basicdatas" class="cover-link"></a><span>Alapadatok</span></li>
+                    <li class="add" title="Új alapadat felvétele"><a href="/admin/addData" class="cover-link"></a><span>Új alapadat</span></li>
+                </ul>
+                <label class="user" data-alt="F" for="toggle-drop-users" title="Fiókok kezelése"><span>Fiókok</span></label>
+                <input type="checkbox" id="toggle-drop-users">
+                <ul class="drop">
+                    <li class="users" title="Felhasználók"><a href="/admin/users" class="cover-link"></a><span>Felhasználók</span></li>
+                    <li class="add" title="Új felhasználó felvétele"><a href="/admin/addUser" class="cover-link"></a><span>Új felhasználó</span></li>
+                    <li class="admins" title="Admin felhasználók"><a href="/admin/AdminUsers" class="cover-link"></a><span>Admin felhasználók</span></li>
+                    <li class="add" title="Új adminfelhasználó felvétele"><a href="/admin/addAdmin" class="cover-link"></a><span>Új admin felhasználó</span></li>
+                </ul>
+                <label class="menu" data-alt="M" for="toggle-drop-menus" title="Menük kezelése"><span>Menük</span></label>
+                <input type="checkbox" id="toggle-drop-menus">
+                <ul class="drop">
+                    <li class="menus" title="Menük"><a href="/admin/menus" class="cover-link"></a><span>Menük</span></li>
+                    <li class="add" title="Új menü felvétele"><a href="/admin/addMenu" class="cover-link"></a><span>Új menü</span></li>
+                </ul>
+                <label class="galleries" data-alt="G" for="toggle-drop-gallery" title="Galériák kezelése"><span>Galéria</span></label>
+                <input type="checkbox" id="toggle-drop-gallery">
+                <ul class="drop">
+                    <li class="gallery" title="Galériák"><a href="/admin/galleries" class="cover-link"></a><span>Galériák</span></li>
+                    <li class="add" title="Új galéria felvétele"><a href="/admin/addGallery" class="cover-link"></a><span>Új galéria</span></li>
+                    <li class="picture" title="Képek"><a href="/admin/pictures" class="cover-link"></a><span>Képek</span></li>
+                    <li class="add" title="Új kép felvétele"><a href="/admin/addPicture" class="cover-link"></a><span>Új kép</span></li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+</aside>
+<div class="sb-controls">
+    <label for="toggle-sb">
+        <span class="close">Összecsuk</span>
+        <i class="fas fa-angle-double-left"></i>
+    </label>
+</div>

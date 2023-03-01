@@ -1,0 +1,63 @@
+<section class="basicdatas">
+    <div class="wrapper box">
+        <h2>Felhasználók</h2>
+        <div class="datas">
+            <div class="data-head">
+                <div class="id block">
+                    <span>ID</span>
+                </div>
+                <div class="name block">
+                    <span>Név</span>
+                </div>
+                <div class="email block">
+                    <span>Érték</span>
+                </div>
+                <div class="gender block">
+                    <span>Szükséges</span>
+                </div>
+                <div class="controls block">
+                    <span>Műveletek</span>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="data-content">
+<?php foreach ($datas as $key => $datas):?>
+                <div class="data-row">
+                    <a class="cover-link" href="editData/<?php echo $datas->id ?>"></a>
+                    <div class="id block">
+                        <span><?php echo $datas->id?></span>
+                    </div>
+                    <div class="name block">
+                        <span><?php echo $datas->name?></span>
+                    </div>
+                    <div class="email block">
+                        <span><?php echo $datas->value?></span>
+                    </div>
+                    <div class="gender block">
+                        <span><?php echo $datas->required ? 'Igen' : 'Nem'?></span>
+                    </div>
+                    <div class="controls block">
+                        <div class="edit-btn">
+                            <a class="edit" href="editBd/<?php echo $datas->id ?>">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                        </div>
+<?php if (!$datas->required) :?>
+                        <div class="delete-btn">
+                            <a class="edit" href="deleteData/<?php echo $datas->id?>">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </div>
+<?php endif;?>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+<?php endforeach;?>
+            </div>
+            <div class="add-panel right">
+                <a href="/admin/addData" class="white">+ Új adat hozzáadása</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</section>

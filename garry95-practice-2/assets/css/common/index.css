@@ -1,0 +1,10 @@
+.login {
+    margin: 0 0 150px 0;
+}
+
+@media (min-width: 800px) {
+    .login {
+        margin: 80px 0 90px 0;
+    }
+    
+}

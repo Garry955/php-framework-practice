@@ -1,0 +1,14 @@
+RewriteEngine ON
+
+#disable for these file types
+RewriteRule /?\.htaccess$ - [F,L]
+RewriteRule /?\.php$ - [F,L]
+RewriteRule /?\.phtml$ - [F,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule . index.fphp
+
+AddType application/x-httpd-php .fphp
+DirectoryIndex index.fphp

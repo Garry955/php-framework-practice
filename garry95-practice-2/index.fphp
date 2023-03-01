@@ -1,0 +1,44 @@
+<?php
+session_start();
+date_default_timezone_set("Europe/Budapest");
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+$GLOBALS["config"] = [
+    "appName" => "practice",
+    "version" => "0.0.1",
+    "domain" => "practice.lh",
+    "path" => [
+        "app" => "app",
+        "index" => "index.php"
+    ],
+    "companyName" => "Practice project",
+    "dateTime" => 2018,
+    "defaults" => [
+        "controller" => "main",
+        "method" => "index"
+    ],
+    "routes" => [],
+    "database" => [
+        "host" => "localhost",
+        "username" => "",
+        "password" => "",
+        "name" => ""
+    ],
+    "PHPMailer" => [
+    	"isSMTP" => true,
+    	"host" => "smtp1.example.com;smtp2.example.com",
+    	"SMTPAuth" => true,
+    	"username" => "",
+    	"password" => "",
+    	"SMTPSecure" => "tls",
+    	"port" => 587
+    ]
+];
+
+define("DS", DIRECTORY_SEPARATOR);
+
+chdir($_SERVER["DOCUMENT_ROOT"]);
+require_once "core/autoload.php";
+$app = new \core\autoload();
+$app->init();
+exit();

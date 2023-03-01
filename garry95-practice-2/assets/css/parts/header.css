@@ -1,0 +1,169 @@
+/**
+ * Header@Common
+ */
+#header-ph {
+    height: 70px;
+}
+
+header {
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 70px;
+    z-index: 999;
+    background-color: #255481;
+    webkit-box-shadow: 0 5px 20px 0 rgba(30, 30, 30, .75);
+    -moz-box-shadow: 0 5px 20px 0 rgba(30, 30, 30, .75);
+    box-shadow: 0 5px 20px 0 rgba(30, 30, 30, .75);
+}
+
+header .main-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #255481;
+    padding: 0 30px;
+}
+
+.fa-times {
+    padding-right: 2px;
+}
+
+header .menu-opener {
+    height: 70px;
+    line-height: 70px;
+}
+
+header .menu-opener i {
+    cursor: pointer;
+    font-size: 32px;
+    line-height: inherit;
+}
+
+header #toggle-mobile-menu:checked + .main-menu {
+    display: block;
+}
+
+header .menus {
+    margin-top: 70px;
+    display: block;
+    border-top: 1px solid #fff;
+    padding-top: 50px;
+}
+
+header .menus li {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 40px;
+}
+
+header .menus li a {
+    width: 100%;
+    display: block;
+    color: #fff;
+}
+
+header .menus li a:hover {
+    color: #000;
+}
+
+/**
+ * Logo
+ */
+#logo {
+    height: 70px;
+    z-index: 10000;
+    position: fixed;
+    left: 20px;
+    top: 0;
+}
+
+#logo a {
+    height: 70px;
+    display: block;
+    padding: 10px;
+    color: #fff;
+}
+
+#logo a:hover {
+    color: #17b900;
+}
+
+#logo svg {
+    height: 50px;
+}
+
+/**
+ * Querys
+ */
+@media (min-width: 1024px) {
+    header .main-menu {
+        display: block;
+        position: static;
+        background: none;
+        padding: 0;
+        height: 70px;
+    }
+    header .menus {
+        border: none;
+        margin: 0;
+        padding: 0;
+        height: inherit;
+        padding-left: 100px;    
+    }
+    header .menus li {
+        display: inline-block;
+        text-transform: none;
+        font-size: 16px;
+        height: inherit;
+        line-height: 70px;
+    }
+    header .menus li + li {
+        margin-left: 20px;
+    }
+}
+
+@media (min-width: 1160px) {
+    #logo {
+        margin-left: -560px;
+        left: 50%;
+    }
+}
+
+header .profile-pikto {
+    display: inline-block;
+    float: right;
+    height: inherit;
+    width: 230px;
+}
+
+header .profile-pikto .profile-pict {
+    height: 100px;
+    padding: 20px 0;
+    float: right;
+    
+}
+header .profile-pikto img {
+    height: 50px;
+}
+
+header .profile-pikto .profile-text {
+    padding: 20px 0;
+}
+
+header .profile-pikto .profile-text li + li {
+    margin-top: 5px;
+}
+
+header .profile-pikto .profile-text a {
+    color: #fff;
+}
+
+header .profile-pikto .profile-text a:hover {
+    color: #000;
+}

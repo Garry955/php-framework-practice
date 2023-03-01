@@ -1,0 +1,35 @@
+footer {
+    height: 108px;
+    background-color: #c3c3c3;
+    border-top: 8px double #255481;
+}
+
+footer svg {
+    height: 40px;
+}
+
+footer .footer-menu {
+    width: 50%;
+    float: left;
+    line-height: 100px;
+}
+
+footer .footer-brands {
+    float: right;
+    line-height: 100px;
+}
+
+footer .footer-logo {
+    float: right;
+    margin-left: 20px;
+    margin-top: 25px;
+}
+
+footer .footer-menu li + li {
+    margin-left: 10px;
+}
+
+footer .footer-menu li + li a {
+    border-left: 1px solid #000;
+    padding-left: 20px;
+}

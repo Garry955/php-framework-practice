@@ -1,0 +1,89 @@
+#button {
+    font-size: 0;
+    line-height: 25px;
+    display: inline-block;
+}
+
+#button label {
+    position: fixed;
+    top: 50%;
+    right: 50px;
+    height: 25px;
+    line-height: 25px;
+    background-color: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 0 20px;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+#button label:hover {
+    background-color: blue;
+    color: #fff;
+}
+
+body {
+    background-image: url("/assets/img/rbgbc.jpg");
+}
+
+.form-outer {
+    background: transparent;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.form-head {
+    color: #fff;
+    background: url("assets/img/rbctophalf.png") top right \no-repeat;
+    background: url("/assets/img/rbctophalf.png") top right \no-repeat;
+    background-color: #3c3c3c;
+    width: calc( 100% + 60px );
+    transform: translate(-30px,-50px);
+    padding: 40px 30px;
+    display: block;
+    margin-bottom: 20px;
+    -webkit-box-shadow: inset 0px 0px 20px 0px rgba(255, 255, 255, 0.3);
+    -moz-box-shadow:    inset 0px 0px 20px 0px rgba(255, 255, 255, 0.3);
+    box-shadow:         inset 0px 0px 20px 0px rgba(255, 255, 255, 0.3);
+    
+}
+
+@media (min-width: 500px) {
+    .form-outer {
+        margin-bottom: 50px;
+    }
+}
+
+@media (min-width: 800px) {
+    .form-head {
+        width: calc( 100% + 40px );        
+        transform: translateX(-20px);
+        padding: 10px 20px;
+    }
+    .form-outer {
+        width: 48%;
+        float: left;
+        padding: 10px 20px 30px 20px;
+        background-color: #255481;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.75);
+        -moz-box-shadow:    0px 0px 20px 0px rgba(50, 50, 50, 0.75);
+        box-shadow:         0px 0px 20px 0px rgba(50, 50, 50, 0.75);
+    }
+    .form-outer + .form-outer {
+        margin-left: 2%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .form-outer {
+        max-width: 50%;
+        margin-left: 0;
+    }
+}

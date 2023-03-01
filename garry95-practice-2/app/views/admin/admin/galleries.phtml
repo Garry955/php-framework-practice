@@ -1,0 +1,61 @@
+<section class="a-users">
+    <div class="wrapper box">
+        <h2>Galériák</h2>
+        <div class="datas">
+            <div class="data-head">
+                <div class="id block">
+                    <span>ID</span>
+                </div>
+                <div class="name block">
+                    <span>Név</span>
+                </div>
+                <div class="email block">
+                    <span>Link</span>
+                </div>
+                <div class="gender block">
+                    <span>Borítókép</span>
+                </div>
+                <div class="controls block">
+                    <span>Műveletek</span>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="data-content">
+<?php foreach ($datas as $key => $data):?>
+                <div class="data-row">
+                    <a class="cover-link" href="editGallery/<?php echo $data->id ?>"></a>
+                    <div class="id block">
+                        <span><?php echo $data->id?></span>
+                    </div>
+                    <div class="name block">
+                        <span><?php echo $data->name?></span>
+                    </div>
+                    <div class="email block">
+                        <span><?php echo $data->uri?></span>
+                    </div>
+                    <div class="gender block">
+                        <span><?php echo $data->cover?></span>
+                    </div>
+                    <div class="controls block">
+                        <div class="edit-btn">
+                            <a class="edit" href="editGallery/<?php echo $data->id ?>">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                        </div>
+                        <div class="delete-btn">
+                            <a class="edit" href="deleteGallery/<?php echo $data->id?>">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+<?php endforeach;?>
+            </div>
+            <div class="add-panel right">
+                <a href="/admin/addGallery" class="white">+ Új galéria hozzáadása</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</section>

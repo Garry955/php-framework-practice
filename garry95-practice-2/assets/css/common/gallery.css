@@ -1,0 +1,118 @@
+.gallery {
+    padding: 30px 0;
+}
+
+.gallery .drop-head {
+    margin-bottom: 20px;
+    line-height: 40px;
+    height: 40px;
+    background-color: #3c3c3c;
+    color: #fff;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+}
+
+.gallery .drop-head:hover {
+    background-color: #255481;
+}
+
+.gallery .drop-head label {
+    vertical-align: middle;
+    display: inline-block;
+    width: 100%;
+    line-height: inherit;
+    height: inherit;
+    padding: 0 20px;
+    z-index: 2;
+    position: relative;
+    cursor: pointer;
+}
+
+.gallery .drop-head label i {
+    font-size: 1.6rem;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+/**
+ * Events
+ */
+.gallery .list {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition-duration: .7s;
+    -moz-transition-duration: .7s;
+    -o-transition-duration: .7s;
+    -ms-transition-duration: .7s;
+    transition-duration: .7s;
+}
+
+.gallery :checked + .drop-head + .list {
+    max-height: 10000px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.gallery :checked + .drop-head label i:before {
+    content: '\f077';
+}
+
+.gallery .item {
+    display: inline-block;
+    vertical-align: top;
+    background-color: #3c3c3c;
+    text-align: left;
+    position: relative;
+    margin: 15px 5px;
+    max-width: 100%;
+    width: 370px;
+}
+
+.gallery .item {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;    
+}
+
+.gallery .item .equlizer {
+    padding-top: 56.25%;
+}
+
+.gallery .item .equlizer ~ * {
+    position: absolute;
+}
+
+.gallery .item figure {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.gallery img {
+    height: 100%;
+    width: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.gallery .item:hover {
+    -webkit-box-shadow: 0px 0px 20px 7px rgba(37, 84, 129, 0.5);
+    -moz-box-shadow: 0px 0px 20px 7px rgba(37, 84, 129, 0.5);
+    box-shadow: 0px 0px 20px 7px rgba(37, 84, 129, 0.5);
+    transform: scale(1.075);
+    cursor: pointer;
+}

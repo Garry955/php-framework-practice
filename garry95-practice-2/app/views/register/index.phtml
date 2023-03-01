@@ -1,0 +1,67 @@
+<section class="register wrapper box">
+    <div class="form-outer">
+        <div class="form-head">
+            <h2>Regisztráció</h2>
+        </div>
+        <form id="register-f" action="/register/reg" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <div class="text">
+                    <span>Név:</span>
+                </div>
+                <div class="form-field input">
+                    <input type="text" name="name" placeholder="Név" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="text">
+                    <span>E-mail cím:</span>
+                </div>
+                <div class="form-field input">
+                    <input type="text" name="email" placeholder="E-mail cím" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-field r-selection">
+                    <span>Nem:</span>
+                    <input type="radio" name="gender" value="0" checked id="gender-1">
+                    <label for="gender-1">Férfi</label>
+                    <input type="radio" name="gender" value="1" id="gender-2">
+                    <label for="gender-2">Nő</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="text">
+                    <span>Jelszó:</span>
+                </div>
+                <div class="form-field input">
+                    <input type="password" name="password" placeholder="Jelszó" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="text">
+                    <span>Jelszó ismét:</span>
+                </div>
+                <div class="form-field input">
+                    <input type="password" name="password2" placeholder="Jelszó ismét" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="text">
+                    <span>Profilkép:</span>
+                </div>
+                <div class="form-field">
+                    <div id="upload" class="form-field">
+                        <input type="file" name="picture" id="pic-in">
+                    </div>
+                </div>
+                <div>
+                    <img id="img-view"/>
+                </div>
+            </div>
+            <div class="form-field">
+                <button type="submit" class="submit upper" id="regsubmit">Regisztráció</button>
+            </div>
+            <div class="clearfix"></div>
+        </form>
+    </div>
+</section>

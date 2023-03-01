@@ -1,0 +1,44 @@
+<section class="gallery">
+    <div class="wrapper">
+        <div class="images">
+            <input type="checkbox" id="toggle-own">
+            <div class="drop-head animate">
+                <label for="toggle-own">Feltöltött képeid<i class="fas fa-chevron-down right"></i>
+                </label>
+            </div>
+            <div class="list animate">
+<?php
+foreach ($images as $item): ?>
+                <div class="item animate">
+                <div class="equlizer"></div>
+                    <figure>
+                        <img src="<?php echo $file = $item['path'] . $item['name']; ?>">
+                        <a href="<?php echo $file; ?>" target="_blank" class="cover-link"></a>
+                    </figure>
+                    <figurecaption>
+                        <?php echo $item['tags']?>
+                    </figurecaption>
+                </div>
+<?php endforeach; ?>
+            </div>
+            <div class="clr clearfix"></div>
+        </div>
+    </div>
+</section>
+
+<section class="videos">
+    <div class="wrapper">
+        <div class="images">
+            <input type="checkbox" id="toggle-own-1">
+            <div class="drop-head animate">
+                <label for="toggle-own-1">Feltöltött videók<i class="fas fa-chevron-down right"></i>
+                </label>
+            </div>
+<?php
+foreach ($videos as $item): ?>
+                    <iframe  allowFullScreen="true" src="<?php echo $item->source?>" width="30%" height="auto"></iframe>
+<?php endforeach; ?>
+            <div class="clr clearfix"></div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,89 @@
+<?php use core\classes\session; ?>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/assets/img/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<title><?php $GLOBALS["config"]["companyName"]?></title>
+    <?php $self->outputCss(); ?>
+</head>
+<body>
+    <div id="logo" class="in-b">
+<?php if ($_SERVER["REQUEST_URI"] == "/" || $_SERVER["REQUEST_URI"] == "/register") {?>
+        <a href="/">
+<?php } else {?>
+        <a href="/home">
+<?php } ?>
+        <?php echo file_get_contents("assets/img/logo-b-full-leaf.svg")?>
+        </a>
+
+    </div>
+    <div id="header-ph"></div>
+    <header class="fix animate">
+        <div class="wrapper box">
+            <div class="menu-opener right white in-b mobile">
+                <label for="toggle-mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </label>
+            </div>
+            <div class="clearfix"></div>
+            <input type="checkbox" id="toggle-mobile-menu">
+            <div class="main-menu">
+                <div class="menu-opener right white in-b mobile">
+                    <label for="toggle-mobile-menu">
+                        <i class="fas fa-times"></i>
+                    </label>
+                </div>
+                <div class="menus in-b">
+                    <nav>
+                        <ul>
+<?php if (!session::check("user")) {?>
+<?php foreach ($menus as $item):?>
+<?php if ($item->position == 'header' && !$item->need_session):?>
+                            <li class="in-b"><a href="<?php echo $item->src; ?>"><?php echo $item->name; ?></a>
+<?php endif; ?>
+<?php endforeach; ?>
+<?php } else {?>
+<?php foreach ($menus as $item):?>
+<?php if ($item->position == 'header' && $item->need_session): ?>
+                            <li class="in-b"><a href="<?php echo $item->src; ?>"><?php echo $item->name; ?></a>
+<?php endif; ?>
+<?php endforeach;?>
+<?php }?>
+                        </ul>
+                    </nav>
+                </div>
+<?php /*if (session::check("user")) {?>
+                <div class="profile-pikto">
+                    <div class="profile-pict in-b">
+                        <img src="/assets/img/logo-b-full-leaf.svg" alt="Profilkép">
+                    </div>
+                    <div class="profile-text">
+                        <li class="in-b"><a href="#"><?php echo $user->name ?></a></li>
+                        <li class="in-b"><a href="#"><?php echo $user->email ?></a></li>
+                        <li class="in-b"><a href="/logout">Kijelentkezés</a></li>
+                    </div>
+                </div>
+<?php }*/?>
+            </div>
+        </div>
+    </header>
+    <div class="clearfix"></div>
+    <main>

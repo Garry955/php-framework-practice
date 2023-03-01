@@ -1,0 +1,77 @@
+<section class="add-user">
+    <div class="wrapper box">
+        <h2>Új felhasználó felvétele</h2>
+        <div class="form-outer">
+            <div class="form-head">
+                <h3>Felhasználó adatok megadása</h3>
+            </div>
+            <div class="clearfix"></div>
+            <form id="edit-f" action="/admin/addUser" method="post">
+                <input type="hidden" name="sent" value="1">
+                <div class="form-group">
+                    <div class="text">
+                        <span>Név:</span>
+                    </div>
+                    <div class="form-field input">
+                        <input type="text" name="name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="text">
+                        <span>E-mail cím:</span>
+                    </div>
+                    <div class="form-field input">
+                        <input type="text" name="email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-field r-selection">
+                        <span>Nem:</span>
+                        <input type="radio" name="gender" value="0" id="gender-1" checked>
+                        <label for="gender-1">Férfi</label>
+                        <input type="radio" name="gender" value="1" id="gender-2">
+                        <label for="gender-2">Nő</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="text">
+                        <span>Jelszó:</span>
+                    </div>
+                    <div class="form-field input">
+                        <input type="password" name="password" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="text">
+                        <span>Jelszó mégegyszer:</span>
+                    </div>
+                    <div class="form-field input">
+                        <input type="password" name="password2" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-field r-selection">
+                        <span>Aktív:</span>
+                        <input type="radio" name="act" value="1" id="active" checked>
+                        <label for="active">igen</label>
+                        <input type="radio" name="act" value="0" id="inactive">
+                        <label for="inactive">Nem</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-field r-selection">
+                        <span>Email kiküldése:</span>
+                        <input type="radio" name="sendMail" value="1" id="send" checked>
+                        <label for="send">igen</label>
+                        <input type="radio" name="sendMail" value="0" id="nosend">
+                        <label for="nosend">Nem</label>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <button type="submit" class="submit upper">Regisztrálás</button>
+                </div>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+    </div>
+</section>
